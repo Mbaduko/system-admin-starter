@@ -1,7 +1,18 @@
 # setup_environment.sh
 Bash script that prepares a project skeleton: 3 directories (`logs`, `configs`, `scripts`) and 3 files inside them. Idempotent — existing items are skipped, missing ones are created, then it prints a summary (`tree` + `ls -lR`).
 
-Run: `bash setup_environment.sh`
+Run: `./setup_environment.sh` (the script has a `#!/bin/bash` shebang and is executable) or `bash setup_environment.sh`
+
+## Permissions
+File permissions are enforced on every run, whether the file was just created or already existed:
+
+| File | Mode |
+|------|------|
+| `logs/system.log` | `644` |
+| `configs/app.conf` | `444` |
+| `scripts/backup.sh` | `755` |
+
+So if someone changes a file's mode, re-running the script restores it.
 
 ## Cases
 
@@ -20,3 +31,5 @@ All 3 directories present but their files were deleted. Script recreated `logs/s
 
 ![Files missing](./screeshots/image2.png)
 
+### 4. Everything exists, permissions changed
+All directories and files present, but file modes were changed (e.g. `chmod 600` on all three). Script reported every item as `already exists` and still reset the files to `644`, `444`, `755`.
