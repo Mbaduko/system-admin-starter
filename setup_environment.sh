@@ -21,7 +21,7 @@ echo
 
 if [ ! -f "logs/system.log" ]; then
 	echo "This is where logs lives" >> logs/system.log
-	ech "File created: logs/system.log"
+	echo "File created: logs/system.log"
 else
 	echo "File already exists: logs/system.log"
 fi
@@ -37,7 +37,7 @@ chmod 444 configs/app.conf
 
 if [ ! -f "scripts/backup.sh" ]; then
 	echo "I am the scripts' holder" >> scripts/backup.sh
-	ech "File created: scripts/backup.sh"
+	echo "File created: scripts/backup.sh"
 else
 	echo "File already exists: scripts/backup.sh"
 fi
