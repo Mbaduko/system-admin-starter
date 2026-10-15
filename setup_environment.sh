@@ -20,7 +20,7 @@ echo
 if [ ! -f "logs/system.log" ]; then
 	echo "This is where logs lives" >> logs/system.log
 	chmod 644 logs/system.log
-	echo "File created: logs/system.log"
+	echo "File created: logs/ssystem.log"
 else
 	echo "File already exists: logs/sytem.log"
 fi
