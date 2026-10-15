@@ -8,7 +8,7 @@ echo "------------------------------"
 
 for DIR in "${DIRECTORIES[@]}"; do
 	if [ -d "$DIR" ]; then
-		cho "Directory already exists: $DIR"
+		echo "Directory already exists: $DIR"
 	else
 		mkdir -p "$DIR"
 		echo "Directory created: $DIR"
